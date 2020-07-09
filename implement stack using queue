@@ -1,0 +1,27 @@
+class MyStack {
+       Deque<Integer> dequeue;
+    /** Initialize your data structure here. */
+    public MyStack() {
+        dequeue=new ArrayDeque<>();
+    }
+    
+    /** Push element x onto stack. */
+    public void push(int x) {
+        dequeue.addFirst(x);
+    }
+    
+    /** Removes the element on top of the stack and returns that element. */
+    public int pop() {
+        return dequeue.pollFirst();
+    } 
+    
+    /** Get the top element. */
+    public int top() {
+        return dequeue.getFirst();
+    }
+    
+    /** Returns whether the stack is empty. */
+    public boolean empty() {
+        return dequeue.size()==0;
+    }
+}
