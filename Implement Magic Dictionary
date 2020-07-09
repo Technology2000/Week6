@@ -1,0 +1,37 @@
+class MagicDictionary {
+        HashSet<String> hset=null;
+    /** Initialize your data structure here. */
+    public MagicDictionary() {
+        hset=new HashSet<>(); 
+    }
+    
+    /** Build a dictionary through a list of words */
+    public void buildDict(String[] dict) {
+        if(dict.length==0 || dict==null)
+            return;
+        for(int i=0;i<dict.length;i++){
+            hset.add(dict[i]);
+        }
+    }
+    
+    /** Returns if there is any word in the trie that equals to the given word after modifying exactly one character */
+    public boolean search(String word) {
+        if(word.length()==0 || word==null)
+            return false;
+        for(String str:hset){
+            if(str.length()==word.length()){
+                int counter=0;
+                for(int i=0;i<str.length();i++){
+                if(str.charAt(i)!=word.charAt(i)){
+                    counter++;
+                }
+            }
+            if(counter==1)
+                return true;
+            }
+    }
+        return false;
+    }
+        
+}
+
