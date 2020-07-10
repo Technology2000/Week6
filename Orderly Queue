@@ -1,0 +1,21 @@
+class Solution {
+    public String orderlyQueue(String S, int K) {
+        if(K==1)
+            return swapString(S);
+        else{
+            char ch[]=S.toCharArray();
+            Arrays.sort(ch);
+            return new String(ch);
+        }
+    }
+        public String swapString(String S){
+            String current=S;
+            String res=S;
+            for(int i=0;i<S.length();i++){
+                current=current.substring(1)+current.charAt(0);
+                if(current.compareTo(res)<0)
+                    res=current;
+            }
+            return res;
+        }
+    }
