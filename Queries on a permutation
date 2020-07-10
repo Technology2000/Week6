@@ -1,0 +1,23 @@
+class Solution {
+    public int[] createTargetArray(int[] nums, int[] index) {
+        int target[]=new int[nums.length];
+        int count=0;
+        Arrays.fill(target,0);
+        for(int i=0;i<index.length;i++){
+            int value=index[i];
+            int val1=nums[i];
+            if(target[value]==0){
+            target[value]=nums[i];
+            count++;
+            }
+            else{
+                for(int j=count-1;j>=value;j--){
+                    target[j+1]=target[j];
+                }
+                target[value]=val1;
+                count++;
+            }
+        }
+        return target;
+    }
+}
